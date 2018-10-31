@@ -15,12 +15,16 @@ public class Programa {
 		
 		cookies.remove("email"); //remove de acordo com a chave
 		
+		cookies.put("fone", "000000000"); //como já tem a chave fone ele só substitui o valor
+		
 		System.out.println("Todos os cookies:");
-		for(String key : cookies.keySet()) { //retorna um Sset com todas as key de um Map
+		for(String key : cookies.keySet()) { //keySet > retorna um Set com todas as key de um Map
 			System.out.println(key + " : "+ cookies.get(key));
 		}
 		
-	
+		
+		
 	}
-
+	
+	
 }

@@ -1,47 +1,30 @@
 package aplicacao;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
+
+import entities.Produto;
 
 public class Programa {
 
 	public static void main(String[] args) {
+		//Segundo exmeplo com outros objetos e tipos
+		Map<Produto, Double> stock = new HashMap<>();
 		
-		//Exemplo do uso de Map
-		Map <String, String> cookies = new TreeMap<>(); //lembrando que TreeMap retorna ordenado pela chave que é String
-		cookies.put("username", "Maria");
-		cookies.put("email", "maria@marie.com");
-		cookies.put("fone", "987654321");
-		//remove de acordo com a chave
-		cookies.remove("email");
-		System.out.println("Chave email foi removida");
+		Produto p1 = new Produto("Tv", 900.0);
+		Produto p2 = new Produto("Notebook", 1200.0);
+		Produto p3 = new Produto("Tablet", 400.0);
 		
-		//como já tem a chave fone ele só substitui o valor
-		cookies.put("fone", "901001001");
+		stock.put(p1, 10000.0);
+		stock.put(p2, 20000.0);
+		stock.put(p3, 15000.0);
 		
-		//verifica se existe a chave 'fone'
-		System.out.println("Contém a chave 'fone': "+ cookies.containsKey("fone"));
+		//Criada a nova instancia do produto
+		Produto ps = new Produto("Tv", 900.0);
 		
-		//pegando o valor de uma chave
-		System.out.println("Telefone: "+cookies.get("fone"));
-		
-		//solicitando uma chave que não existe
-		System.out.println("Email: "+ cookies.get("email"));
-		
-		//verificando o tamanho do Map
-		System.out.println("Tam. do Map: "+ cookies.size());
-				
-		System.out.println("Todos os cookies:");
-		//keySet > retorna um Set com todas as key de um Map e pega a chave com o .get(key)
-		for(String key : cookies.keySet()) { 
-			System.out.println(key + " : "+ cookies.get(key));
-		}
-		
-		
-		
-		
-		
+		//Mesmo sendo instância diferente, como os itens são iguais
+		System.out.println("Contains 'ps' key: " + stock.containsKey(ps));
+
 	}
-	
-	
+
 }
